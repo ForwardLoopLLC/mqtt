@@ -1,0 +1,28 @@
+version: '2'
+services:
+    mqtt_broker:
+        image: "library/eclipse-mosquitto"
+        network_mode: host
+        volumes:
+        - ./broker/config:/mosquitto/config
+        ports:
+        - $MQTT_PORT:$MQTT_PORT
+        command: mosquitto -v -p $MQTT_PORT -c /mosquitto/config/mosquitto.conf
+    mqtt_pub:
+        build: $MQTT_PUB 
+        network_mode: host
+        environment:
+        - MQTT_PORT=$MQTT_PORT
+        volumes:
+        - $MQTT_PUB:/pub/
+        ports:
+        - $MQTT_PORT 
+    mqtt_sub:
+        build: $MQTT_SUB 
+        network_mode: host
+        environment:
+        - MQTT_PORT=$MQTT_PORT
+        volumes:
+        - $MQTT_SUB:/sub/
+        ports:
+        - $MQTT_PORT 
