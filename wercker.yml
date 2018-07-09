@@ -12,7 +12,7 @@ build:
                 cd docs && make html && cd .. && \
                 mkdir -p sync/drivers/$WERCKER_GIT_REPOSITORY/ && \
                 cp -r docs/build/html/ sync/drivers/$WERCKER_GIT_REPOSITORY/$WERCKER_GIT_BRANCH/ && \
-                ls sync/drivers/$WERCKER_GIT_REPOSITORY/$WERCKER_GIT_BRANCH/
+                ls -R sync/
         - script:
             name: push documentation
             code: |
