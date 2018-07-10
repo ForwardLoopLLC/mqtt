@@ -5,7 +5,9 @@
 
 Drivers for MQTT Networking
 ===========================
-These drivers support Mosquitto (MQTT) networking. They provide a convenient interface for defining brokers, publishers, and subscribers across multiple different devices with different operating systems and system architectures.
+`These drivers <https://github.com/ForwardLoopLLC/mqtt>`_ support Mosquitto (MQTT) networking. They provide a convenient interface for defining brokers, publishers, and subscribers across multiple different devices with different operating systems and system architectures.
+
+.. image:: forward-loop-mqtt.png
 
 .. toctree::
    :maxdepth: 2
